@@ -2,7 +2,7 @@
 
 In this repository we walk through all steps required to run ML pipelines in Azure Machine Learning using a custom Docker image. This is of particular importance if you intend to run a pipeline including a script (python or R) which relies on libraries/packages of its respective eco-system at runtime as downloading and installing these dependencies add significant overhead to the your pipeline's execution time. 
 
-**If you're already familiar with ML pipelines in Azure ML and some of the concepts involved, you may head straight to the code. If not, please take 5 min. to read the rest of the Readme to first establish an understanding of what the code will do.**
+** --> If you're already familiar with ML pipelines in Azure ML and some of the concepts involved, you may head straight to the code. If not, please take 5 min. to read the rest of the Readme to first establish an understanding of what the code will do. <-- **
 
 ## Prerequsities
 
