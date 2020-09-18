@@ -37,9 +37,12 @@ Azure ML compute cluster is a managed compute infrastructure that allows you to 
 
 Another common pattern when wrangling with big data volumes is to use [Azure Databricks](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-attach-compute-sdk#databricks) as the compute target for an intial data preparation and aggregation step, leveraging Spark's powerful distributed architecture in the process. The resulting training dataset often times is orders of magnitude smaller than the raw data, prompting data scientist's to rely on python's [sklearn library](https://scikit-learn.org/stable/)  (or others) for machine learning tasks. Here's where the flexibility of ML pipelines comes in handy, allowing the data preparation step to run on a different compute target (Azure Databricks) than the step to train a model (Azure ML compute cluster). 
 
-### Docker images
+#### Docker images
 
 By default, Azure ML will run your ML pipeline in a Docker container within an Azure ML compute cluster. These [Docker images](https://hub.docker.com/_/microsoft-azureml-base) provided and maintained by Microsoft, are called the Azure ML base images. Without specifying a particular Docker image to be used to run your ML pipeline, Azure ML will use one of these base images. 
 
 As the ML pipeline is executed, the compute cluster is spun up and will pull one of the Docker base images from Azure ML's Azure Container Registry. Once that operation has completed and the python and R runtimes are available inside Docker in your Azure ML compute cluster, additional libraries & packages specified for the pipeline step will be downloaded and installed as specified by your [Run Configuration](https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py). As mentioned in the beginning, this step can be quite time consuming if the script file you want to execute requires any of these libraries or packages that are not part of the Azure ML Docker base images. In a recent project that required five R packages to be installed in addition to what is part of Azure ML's Docker base images, a pipeline overhead of 10-15 minutes accrued.
 
+## Conclusion
+
+Now what you are familiar with the motivation behind using a custom Docker image in an ML pipeline as well as some of the main concepts and components involved, head over to the code and set up everything as outlined.
