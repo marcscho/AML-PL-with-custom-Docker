@@ -2,6 +2,14 @@
 
 In this repository we walk through all steps required to run ML pipelines in Azure Machine Learning using a custom Docker image. This is of particular importance if you intend to run a pipeline including a script (python or R) which relies on libraries/packages of its respective eco-system at runtime as downloading and installing these dependencies add significant overhead to the your pipeline's execution time. 
 
+## Prerequsities
+
+In order to follow the instructions provided in this repo, you need
+
+- Access to a Docker runtime
+- Access to an Azure ML workspace with
+- an associated Azure Container Registry
+
 ## About ML pipelines in Azure
 
 [Azure ML pipelines](https://docs.microsoft.com/en-us/azure/machine-learning/concept-ml-pipelines) essentially allow data scientists to build, run and maintain ML workflows. In most cases, these pipelines are used to train a machine learning model from some training data. Whilst technically, ML pipelines could also be used to use data as input, apply some transformation and then output yet another dataset, other technologies such as [Azure Data Factory](https://docs.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities) are more suitable for these kinds of pipelines.
@@ -28,9 +36,7 @@ Azure ML compute cluster is a managed compute infrastructure that allows you to 
 
 Another common pattern when wrangling with big data volumes is to use [Azure Databricks](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-attach-compute-sdk#databricks) as the compute target for an intial data preparation and aggregation step, leveraging Spark's powerful distributed architecture in the process. The resulting training dataset often times is orders of magnitude smaller than the raw data, prompting data scientist's to rely on python's [sklearn library](https://scikit-learn.org/stable/)  (or others) for machine learning tasks. Here's where the flexibility of ML pipelines comes in handy, allowing the data preparation step to run on a different compute target (Azure Databricks) than the step to train a model (Azure ML compute cluster). 
 
-## Docker images
+### Docker images
 
-By default, Azure ML will run your ML pipeline in a Docker image within an Azure ML compute cluster. These [Docker images](https://hub.docker.com/_/microsoft-azureml-base) provided and maintained by Microsoft, are called the Azure ML base images. You can obtain...
-
-<code>docker pull mcr.microsoft.com/azureml/base</code>
+By default, Azure ML will run your ML pipeline in a Docker image within an Azure ML compute cluster. These [Docker images](https://hub.docker.com/_/microsoft-azureml-base) provided and maintained by Microsoft, are called the Azure ML base images. Without specifying any specific Docker image to be used to run your ML pipeline, Azure ML will use one of these base images. 
 
