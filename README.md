@@ -38,5 +38,7 @@ Another common pattern when wrangling with big data volumes is to use [Azure Dat
 
 ### Docker images
 
-By default, Azure ML will run your ML pipeline in a Docker image within an Azure ML compute cluster. These [Docker images](https://hub.docker.com/_/microsoft-azureml-base) provided and maintained by Microsoft, are called the Azure ML base images. Without specifying any specific Docker image to be used to run your ML pipeline, Azure ML will use one of these base images. 
+By default, Azure ML will run your ML pipeline in a Docker image within an Azure ML compute cluster. These [Docker images](https://hub.docker.com/_/microsoft-azureml-base) provided and maintained by Microsoft, are called the Azure ML base images. Without specifying a particular Docker image to be used to run your ML pipeline, Azure ML will use one of these base images. 
+
+As the ML pipeline is executed, the compute cluster is spun up and will then pull one of the Docker base images from Azure ML's Azure Container Registry. Once that operation has completed and the python and R runtimes are available inside the Docker in your Azure ML compute cluster, additional libraries & packages specified for the pipeline step will be downloaded and installed. As mentioned in the beginning, this step can be quite time consuming if the script file you want to execute requires any of these libraries or packages that are not part of the Azure ML Docker base images. 
 
