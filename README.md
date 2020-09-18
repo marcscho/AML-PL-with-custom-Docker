@@ -8,3 +8,9 @@ In this repository we walk through all steps required to run ML pipelines in Azu
 
 ### The anatomy of ML pipelines
 
+#### Steps
+
+#### Triggers
+
+#### Execution environment
+
