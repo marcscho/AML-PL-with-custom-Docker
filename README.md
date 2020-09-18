@@ -18,5 +18,7 @@ Steps themselves can be of [different kinds](https://docs.microsoft.com/en-us/py
 
 #### Triggers
 
+There are various events that can potentially trigger an ML pipeline, depending on your project's use case and requirements. Common scenarios include [scheduling ML pipelines](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-schedule-pipelines) to run at fixed time intervalls. When an ML pipeline is [published](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-pipelines) it is exposed as a REST endpoint and can be interacted with from other systems, [Azure Data Factory](https://docs.microsoft.com/en-us/azure/data-factory/transform-data-machine-learning-service). 
+
 #### Execution environment
 
