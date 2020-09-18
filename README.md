@@ -48,3 +48,7 @@ As the ML pipeline is executed, the compute cluster is spun up and will pull one
 ## Conclusion
 
 Now what you are familiar with the motivation behind using a custom Docker image in an ML pipeline as well as some of the main concepts and components involved, head over to the code and set up everything as outlined.
+
+# Acknowledgement
+
+Special thanks to [@mx-iao](https://github.com/mx-iao) for her valuable inputs in putting all the required puzzle pieces together.
