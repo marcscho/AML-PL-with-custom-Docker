@@ -8,7 +8,7 @@ In this repository we walk through all steps required to run ML pipelines in Azu
 
 In order to follow the instructions provided in this repo, you need
 
-- Access to a Docker runtime
+- Access to a Docker runtime (e.g. Docker Desktop for [Windows](https://docs.docker.com/docker-for-windows/install/), [Mac](https://docs.docker.com/docker-for-mac/install/) or [Linux](https://docs.docker.com/engine/install/))
 - Bash (e.g. through [Git Bash](https://gitforwindows.org/))
 - Access to an Azure ML workspace with
 - an associated Azure Container Registry
